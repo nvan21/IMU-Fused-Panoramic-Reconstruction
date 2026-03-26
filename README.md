@@ -37,7 +37,7 @@ Once the optimized orientation trajectory is estimated, the data is used to geom
 Experimental results across multiple datasets demonstrate that the proposed projected gradient descent optimization significantly reduces cumulative drift compared to raw angular velocity integration. This drift correction yields visually coherent panoramas, even in the presence of sensor noise and static initialization periods.
 
 ### Estimated Orientation vs. Ground Truth
-*(Insert plots comparing your optimized unoptimized roll, pitch, and yaw angles to the VICON ground truth here)*
+[Plot of pitch, yaw, roll optimization](images/optimized_orientation.png)
 
 ### Reconstructed Panoramas
-*(Insert your stitched panorama images here)*
+[Reconstructed panorama](images/panorama.png)

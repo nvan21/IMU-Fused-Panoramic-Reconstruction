@@ -2,7 +2,6 @@
 
 **Course:** ECE 276A: Sensing & Estimation in Robotics  
 **Institution:** University of California San Diego  
-**Author:** Nathan Van Utrecht 
 
 ---
 

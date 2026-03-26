@@ -35,9 +35,10 @@ $$
 ## Technical Approach
 The pipeline is divided into two main components:
 
-1.  **Orientation Tracking:** * **Calibration:** The IMU biases (accelerometer and gyroscope) are estimated using the first few seconds of data where the system is completely static.
+1.  **Orientation Tracking:**
+    * **Calibration:** The IMU biases (accelerometer and gyroscope) are estimated using the first few seconds of data where the system is completely static.
     * **Trajectory Optimization:** A projected gradient descent algorithm iteratively refines the orientation trajectory. It minimizes the cost function defined above and applies a normalization projection step to strictly enforce the quaternion unit-norm constraint after every update.
-2.  **Panorama Stitching:**
+3.  **Panorama Stitching:**
     * **Synchronization & Mapping:** The optimized orientations are used to temporally synchronize and geometrically map the 2D camera images onto a static environment map. 
     * **Projection:** A spherical-to-cylindrical (equirectangular) projection maps the global Cartesian vectors of the camera pixels into pixel coordinates on a 2048 x 1536 canvas.
 

@@ -21,10 +21,16 @@ The core tracking problem is formulated as a constrained optimization task over 
 * **State Representation:** The orientation at time $t$ is represented by a unit quaternion $q_t \in \mathbb{H}_*$.
 * **Motion Model:** Using the IMU's angular velocity $\omega_t$ and the time step $\tau_t$, the predicted next state is defined by quaternion kinematics:
   
-    $$q_{t+1} = f(q_t, \tau_t \omega_t) = q_t \circ \exp([0, \tau_t \omega_t / 2])$$
+$$
+q_{t+1} = f(q_t, \tau_t \omega_t) = q_t \circ \exp([0, \tau_t \omega_t / 2])
+$$
+
 * **Observation Model:** Assuming the body undergoes pure rotation, the accelerometer measures the gravity vector rotated into the body frame:
   
-    $$[0, a_t] = h(q_t) = q_t^{-1} \circ [0, 0, 0, 1] \circ q_t$$
+$$
+[0, a_t] = h(q_t) = q_t^{-1} \circ [0, 0, 0, 1] \circ q_t
+$$
+
 * **Optimization Objective:** The goal is to find the trajectory $q_{1:T}$ that minimizes the combined motion and observation errors while strictly enforcing the unit-norm constraint $||q_t||_2 = 1$: 
 
 $$
